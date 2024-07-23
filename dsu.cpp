@@ -19,14 +19,14 @@ ll find(ll vertex){
 }
 
 void union_func(ll a, ll b){
-    ll x = find(a);
-    ll y = find(b);
+    ll x = find(a, parent);
+    ll y = find(b, parent);
     if(x!=y){
         if(size[x]<size[y]){
             swap(x, y);
-            parent[y] = x;
-            size[x] += size[y];
         }
+        parent[y] = x;
+        size[x] += size[y];
     }
 }
 
